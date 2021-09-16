@@ -5,7 +5,7 @@ class ParaSplitter:
 
     def __init__(self, dic, text) -> None:
         self.dic = dic
-        self.last_idx = len(text) - 1
+        self.last_idx = len(text)
         self.text = text
     
     def split_by_idx(self):
@@ -57,7 +57,7 @@ class ParaSplitter:
             if end_idx:
                 new_dic[key]['end_idx'] = end_idx
             else: 
-                new_dic[key]['end_idx'] = text_length - 1
+                new_dic[key]['end_idx'] = text_length 
         return new_dic
     
     def split_text_by_idx(self, dic, text):
