@@ -1,13 +1,13 @@
 ﻿{
     "chapter_dic": {
-        "범죄사실": { "regex": "범죄사실", "start_idx": null, "end_idx": null },
-        "증거의요지": { "regex": "증거의요지", "start_idx": null, "end_idx": null },
-        "법령의적용": { "regex": "법령.{1,2}적용", "start_idx": null, "end_idx": null },
+        "범죄사실": { "regex": "범죄사실$", "start_idx": null, "end_idx": null },
+        "증거의요지": { "regex": "증거의요지$", "start_idx": null, "end_idx": null },
+        "법령의적용": { "regex": "법령.{1,2}적용$", "start_idx": null, "end_idx": null },
         "판단": {
             "regex": "판단[^0-9가-힣A-Za-z]?$",
             "start_idx": null,
             "end_idx": null
         },
-        "양형의이유": { "regex": "양형의이유", "start_idx": null, "end_idx": null }
+        "양형의이유": { "regex": "양형의이유$", "start_idx": null, "end_idx": null }
     }
 }

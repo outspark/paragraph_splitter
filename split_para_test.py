@@ -1,4 +1,5 @@
 import json
+import os
 import glob
 from parasplitter import ParaSplitter
 
@@ -12,6 +13,12 @@ def load_json(json_file):
         content = json.load(js)
     return content
 
+def save_json(fname, dic):
+    folder_path = os.path.dirname(fname)
+    fn = os.path.basename(fname)
+    with open(f'{folder_path}/parasplit/PARASPLIT_{fn}', 'w', encoding="utf-8") as f:
+        json.dump(dic, f, ensure_ascii=False)
+
 
 if __name__ == "__main__":
     foldername = "rawdata"
@@ -22,7 +29,7 @@ if __name__ == "__main__":
     default_dic = load_json('chapter_dic.json')['chapter_dic']
     
     files = glob.glob(f'{foldername}/*.json')    
-    
+
     for fname in files:
         
         #load text 
@@ -34,9 +41,10 @@ if __name__ == "__main__":
         result = paras.split_by_idx()
         
         print(type(result), result)
+
+        save_json(fname, result)
+
         
         
-        # case.update(result)
-        # print(case)
 
 
