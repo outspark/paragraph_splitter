@@ -38,12 +38,11 @@ if __name__ == "__main__":
 
     for fname in files:
         
-        #load text 
+        #load json 
         case = load_json(fname)
-        text = case['case_main'].strip().split('\n') #to check line by line 
         
         #call class obj and split text
-        paras = ParaSplitter(default_dic, text)
+        paras = ParaSplitter(default_dic, case, 'case_main') #takes chapter_dic.json, case data, key
         result = paras.split_by_idx()
         
         # print(type(result), result)

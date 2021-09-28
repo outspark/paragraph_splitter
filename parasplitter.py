@@ -3,10 +3,10 @@ from sys import exc_info
 
 class ParaSplitter:
 
-    def __init__(self, dic, text) -> None:
+    def __init__(self, dic, case, key) -> None:
         self.dic = dic.copy()
         self.last_idx = len(text)
-        self.text = text
+        self.text = case[key].strip().split('\n') #to check line by line 
     
     def split_by_idx(self):
         try:
