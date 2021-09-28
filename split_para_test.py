@@ -40,7 +40,7 @@ if __name__ == "__main__":
         
         #load text 
         case = load_json(fname)
-        text = case['case_main'].strip().split('\n')
+        text = case['case_main'].strip().split('\n') #to check line by line 
         
         #call class obj and split text
         paras = ParaSplitter(default_dic, text)
