@@ -29,7 +29,6 @@ def add_key(parasplit_res, original_json):
 if __name__ == "__main__":
     foldername = "rawdata"
     #fname = 'testdata/test.json'
-    #fname = 'testdata/test_copy.json'
 
     #load chapter split indicators
     default_dic = load_json('chapter_dic.json')['chapter_dic']
