@@ -5,7 +5,9 @@ from parasplitter import ParaSplitter
 
 '''
 ParaSplitter
-split_by_idx() 사용 -> dictionary 
+- INPUT: rawdata 폴더의 json 파일
+- split_by_idx() 사용 -> dictionary 
+- OUTPUT: original json + paragraph split dict 
 '''
 
 def load_json(json_file):
@@ -18,6 +20,10 @@ def save_json(fname, dic):
     fn = os.path.basename(fname)
     with open(f'{folder_path}/parasplit/PARASPLIT_{fn}', 'w', encoding="utf-8") as f:
         json.dump(dic, f, ensure_ascii=False)
+
+def add_key(parasplit_res, original_json):
+    original_json['case_main_parasplit'] = parasplit_res
+    return original_json
 
 
 if __name__ == "__main__":
@@ -40,11 +46,12 @@ if __name__ == "__main__":
         paras = ParaSplitter(default_dic, text)
         result = paras.split_by_idx()
         
-        print(type(result), result)
+        # print(type(result), result)
 
-        save_json(fname, result)
+        # type(result) -> dictionary
 
-        
-        
+        new_json = add_key(result, case)
+        save_json(fname, new_json)
+
 
 

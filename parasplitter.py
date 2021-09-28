@@ -32,6 +32,9 @@ class ParaSplitter:
         else:
             return None
 
+    def remove_duplicates(self, cu_dic):
+        pass
+
     def remove_none_keys(self,current_dic):
         remove_keys = []
         for key in current_dic:
